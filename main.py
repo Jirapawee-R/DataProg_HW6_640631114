@@ -30,7 +30,12 @@ df_NumberOfAvocado_by_region['4225'] = df_NumberOfAvocado_by_region['4225']/9
 df_NumberOfAvocado_by_region['4770'] = df_NumberOfAvocado_by_region['4770']/12
 
 # Rename Column
-df_NumberOfAvocado_by_region = df_NumberOfAvocado_by_region.rename(columns={'4046': '#4046', '4225': '#4225', '4770': '#4770'})
+df_NumberOfAvocado_by_region = df_NumberOfAvocado_by_region.rename(columns={'4046': '#4046',
+                                                                            '4225': '#4225',
+                                                                            '4770': '#4770'})
 
 # Calculate Total number of avocado produced from each region and insert as new column named "TotalNumberOfAvocado"
 df_NumberOfAvocado_by_region['TotalNumberOfAvocado'] = df_NumberOfAvocado_by_region['#4046'] + df_NumberOfAvocado_by_region['#4225'] + df_NumberOfAvocado_by_region['#4770']
+
+# %%
+df_sold_by_month = df.groupby(['Date'], sort=False)[['Total Volume']].sum()
